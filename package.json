@@ -1,0 +1,17 @@
+{
+  "name": "jadebi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JadeBi desktop application monorepo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["editor", "block note", "notion"],
+  "author": "fengyifan",
+  "license": "MIT",
+  "packageManager": "pnpm@10.29.1",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=10.0.0"
+  }
+}
