@@ -1,0 +1,100 @@
+{
+  "compilerOptions": {
+    // ==================== 编译目标 ====================
+    // target: 编译后的 JavaScript 目标版本
+    // "ESNext" 表示最新的 ECMAScript 特性
+    "target": "ESNext",
+    // lib: 包含的内置类型定义库
+    // "ESNext" 包含最新的 ECMAScript 特性类型定义
+    // "DOM" 包含浏览器 DOM API 类型定义
+    "lib": ["ESNext", "DOM"],
+    // module: 生成的模块系统
+    // "ESNext" 使用原生 ES 模块，适合现代打包工具
+    "module": "ESNext",
+    // moduleResolution: 模块解析策略
+    // "bundler" 针对现代打包工具（如 Vite, Webpack）优化
+    // 能正确处理 .svelte.ts 等特殊扩展名
+    "moduleResolution": "bundler",
+    // ==================== 类型检查 ====================
+    // strict: 启用所有严格类型检查选项
+    // 包括 strictNullChecks, strictFunctionTypes 等
+    // 强烈推荐启用以获得最佳类型安全
+    "strict": true,
+    // isolatedModules: 确保每个文件都能独立编译
+    // 对于 Svelte 项目必需，因为 .svelte 文件需要单独处理
+    "isolatedModules": true,
+    // esModuleInterop: 改善 CommonJS/ES 模块互操作性
+    // 允许 import * as React from 'react' 等语法
+    "esModuleInterop": true,
+    // allowSyntheticDefaultImports: 允许合成默认导入
+    // 对于没有默认导出的模块，TypeScript 会创建合成默认导出
+    "allowSyntheticDefaultImports": true,
+    // resolveJsonModule: 允许导入 .json 文件
+    "resolveJsonModule": true,
+    // ==================== 输出控制 ====================
+    // declaration: 生成 .d.ts 类型声明文件
+    // 对于库包非常重要，使用者能获得类型提示
+    "declaration": true,
+    // declarationMap: 为声明文件生成 source map
+    // 便于调试和导航
+    "declarationMap": true,
+    // sourceMap: 生成 JavaScript 的 source map
+    "sourceMap": true,
+    // outDir: 输出目录
+    // 设为空字符串表示不输出，由打包工具处理
+    "outDir": "",
+    // ==================== 实验性功能 ====================
+    // experimentalDecorators: 启用装饰器实验性支持
+    // Svelte 5 不使用装饰器，但某些库可能用到
+    "experimentalDecorators": true,
+    // emitDecoratorMetadata: 为装饰器生成元数据
+    // 配合 experimentalDecorators 使用
+    "emitDecoratorMetadata": true,
+    // ==================== 杂项 ====================
+    // skipLibCheck: 跳过库文件的类型检查
+    // 提高编译速度，推荐启用
+    "skipLibCheck": true,
+    // forceConsistentCasingInFileNames: 强制文件名大小写一致
+    // 避免跨平台大小写问题
+    "forceConsistentCasingInFileNames": true,
+    // baseUrl: 解析非相对模块的基础路径
+    // "." 表示当前目录
+    "baseUrl": ".",
+    // paths: 模块路径映射
+    // 可用于内部包引用（如果需要）
+    "paths": {
+      // 示例: "@jadebi/io/*": ["src/*"]
+    },
+    // ==================== Svelte 特殊配置 ====================
+    // types: 包含的全局类型定义
+    // "svelte" 提供 $state, $derived 等 runes 的类型定义
+    "types": ["svelte"],
+    // jsx: JSX 处理方式
+    // "preserve" 保留 JSX 结构，由 Svelte 编译器处理
+    "jsx": "preserve",
+    // jsxImportSource: JSX 导入源
+    // 对于 Svelte 5，可设为 "svelte"
+    "jsxImportSource": "svelte",
+    // allowImportingTsExtensions: 允许导入 TypeScript 扩展名
+    // 对于 .svelte.ts 文件可能需要
+    "allowImportingTsExtensions": true
+  },
+  // ==================== 包含文件 ====================
+  // include: 需要编译的文件模式
+  "include": [
+    "src/**/*.ts", // 所有 TypeScript 文件
+    "src/**/*.svelte", // 所有 Svelte 组件
+    "src/**/*.svelte.ts", // 包含 Svelte 语法的 TypeScript 文件
+    "src/**/*.js", // JavaScript 文件（如果需要）
+    "src/**/*.jsx", // JSX 文件
+    "src/**/*.tsx"           // TypeScript + JSX 文件
+  ],
+  // ==================== 排除文件 ====================
+  // exclude: 排除编译的文件模式
+  "exclude": [
+    "node_modules", // 依赖目录
+    "dist", // 构建输出目录
+    "**/*.test.ts", // 测试文件（如果有单独配置）
+    "**/*.spec.ts"           // 规范测试文件
+  ]
+}

@@ -4,12 +4,21 @@
   "private": true,
   "description": "JadeBi desktop application monorepo",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "echo \"开发服务器尚未配置 - 请参考 CLAUDE.md 中的开发命令\" && exit 1",
+    "build": "echo \"构建脚本尚未配置 - 请参考 CLAUDE.md 中的构建命令\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"代码检查尚未配置\" && exit 1",
+    "format": "echo \"代码格式化尚未配置\" && exit 1",
+    "clean": "rm -rf node_modules && pnpm store prune"
   },
-  "keywords": ["editor", "block note", "notion"],
+  "keywords": [
+    "editor",
+    "block note",
+    "notion"
+  ],
   "author": "fengyifan",
   "license": "MIT",
-  "packageManager": "pnpm@10.29.1",
+  "packageManager": "pnpm@10.30.1",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=10.0.0"
